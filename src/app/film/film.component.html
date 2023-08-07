@@ -1,0 +1,24 @@
+<div class="container">
+<mat-card class="example-card" *ngFor="let film of films">
+  <mat-card-header>
+    
+    <mat-card-title class="title">{{ film.titoloFilm }}</mat-card-title>
+    <mat-card-subtitle>Sala Proiezione: {{ film.idSalaCinema }}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="mat-card-image-container">
+    <div><img mat-card-image [src]="film.locandina" alt="foto locandina"></div>
+  </div>
+    <mat-card-content>
+      <p><strong>Date Inizio Proiezione:  </strong>
+        <strong *ngFor="let dataInizio of film.dateInizioProFormatted">{{ dataInizio }}</strong>
+      </p>
+      <p><strong>Date Fine Proiezione:  </strong>
+        <strong *ngFor="let dataFine of film.dateFineProFormatted">{{ dataFine }}</strong>
+      </p>
+
+      <p><strong>Orari Proiezione: </strong>
+        <strong *ngFor="let orario of film.orariProiezione">{{ orario }}</strong>
+      </p>
+  </mat-card-content>
+</mat-card>
+</div>
